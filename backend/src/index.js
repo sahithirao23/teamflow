@@ -24,9 +24,8 @@ app.use(cookieParser());
 
 // ─── CORS ────────────────────────────────────────────────────────────────────
 app.use(cors({
-  origin: ['https://brave-amazement-production.up.railway.app', 'http://localhost:5173'],
-  credentials: true,
-  credentials: true,
+  origin: '*',
+  credentials: false,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
 }));
 
