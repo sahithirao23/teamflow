@@ -25,8 +25,7 @@ app.use(cookieParser());
 // ─── CORS ────────────────────────────────────────────────────────────────────
 app.use(cors({
   origin: ['https://brave-amazement-production.up.railway.app', 'http://localhost:5173'],
-credentials: true,origin: ['https://brave-amazement-production.up.railway.app', 'http://localhost:5173'],
-credentials: true,
+  credentials: true,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
 }));
@@ -37,8 +36,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // ─── Rate Limiting ───────────────────────────────────────────────────────────
 const authLimiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 20,
+  windowMs: 15 * 60 * 1000,
+  max: 100,
   message: { error: 'Too many auth attempts, please try again later.' },
 });
 
