@@ -48,11 +48,11 @@ const apiLimiter = rateLimit({
 });
 
 // ─── Routes ──────────────────────────────────────────────────────────────────
-app.use('/api/auth', authLimiter, authRoutes);
-app.use('/api/projects', apiLimiter, projectRoutes);
-app.use('/api/tasks', apiLimiter, taskRoutes);
-app.use('/api/users', apiLimiter, userRoutes);
-app.use('/api/activity', apiLimiter, activityRoutes);
+app.use('/api/auth', authRoutes);
+app.use('/api/projects', projectRoutes);
+app.use('/api/tasks', taskRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/activity', activityRoutes);
 
 // ─── Health Check ────────────────────────────────────────────────────────────
 app.get('/health', (req, res) => {
