@@ -24,11 +24,11 @@ app.use(cookieParser());
 
 // ─── CORS ────────────────────────────────────────────────────────────────────
 app.use(cors({
-  origin: '*',
-  credentials: false,
+  origin: 'https://brave-amazement-production.up.railway.app',
+  credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
 }));
-
+app.options('*', cors());
 // ─── Body Parsing ────────────────────────────────────────────────────────────
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true }));
