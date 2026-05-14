@@ -25,7 +25,12 @@ app.use(cors({
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE'],
 }));
+<<<<<<< HEAD
 
+=======
+app.options('*', cors());
+// ─── Body Parsing ────────────────────────────────────────────────────────────
+>>>>>>> 94e0041 (fix: cors credentials true)
 app.use(express.json({ limit: '10kb' }));
 app.use(express.urlencoded({ extended: true }));
 
